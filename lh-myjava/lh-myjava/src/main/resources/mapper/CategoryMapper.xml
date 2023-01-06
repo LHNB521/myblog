@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mapper.CategoryMapper">
+
+    <insert id="categoryAdd" parameterType="Category">
+        insert into blog.category (category_name, category_description)
+        values (#{category_name},#{category_description});
+    </insert>
+
+    <delete id="categoryDelete" parameterType="Integer">
+        delete from blog.category where category_id = #{category_id};
+    </delete>
+
+    <update id="categoryUpdate" parameterType="Category">
+        update blog.category set category_name=#{category_name},category_description=#{category_description}
+        where category_id=#{category_id};
+    </update>
+
+    <select id="categoryQueryById" parameterType="Integer" resultType="Category">
+        select * from blog.category where category_id=#{category_id};
+    </select>
+
+    <select id="categoryQueryAll" resultType="Category">
+        select * from blog.category;
+    </select>
+
+</mapper>

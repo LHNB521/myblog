@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mapper.DocumentMapper">
+
+    <insert id="documentAdd" parameterType="Document">
+        insert into blog.articles (article_title, article_content, article_date)
+        values (#{article_title},#{article_content},#{article_date});
+    </insert>
+
+    <delete id="documentDelete" parameterType="Integer">
+        delete from blog.articles where id = #{id};
+    </delete>
+
+    <update id="documentUpdate" parameterType="Document">
+        update blog.articles set title=#{title},description=#{description},body=#{body}
+        where id=#{id};
+    </update>
+
+    <select id="documentQuery" parameterType="String" resultType="Document">
+        select * from blog.articles where article_title=#{article_title};
+    </select>
+
+    <select id="documentQueryAll" resultType="Document">
+        select * from blog.articles;
+    </select>
+
+</mapper>

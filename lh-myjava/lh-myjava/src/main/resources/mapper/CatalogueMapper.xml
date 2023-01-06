@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mapper.CatalogueMapper">
+
+    <insert id="CatalogueAdd" parameterType="Catalogue">
+        insert into lh.catalogue (title, url, category)
+        values (#{title},#{url},#{category});
+    </insert>
+
+    <delete id="CatalogueDelete" parameterType="Integer">
+        delete from lh.catalogue where id = #{id};
+    </delete>
+
+    <update id="CatalogueUpdate" parameterType="Catalogue">
+        update lh.catalogue set title=#{title},url=#{url},category=#{category}
+        where id=#{id};
+    </update>
+
+    <select id="catalogueQueryByCategory" resultType="Catalogue">
+        select * from lh.catalogue where category = #{category};
+    </select>
+
+    <select id="CatalogueQueryAll" resultType="Catalogue">
+        select * from lh.catalogue;
+    </select>
+
+</mapper>
