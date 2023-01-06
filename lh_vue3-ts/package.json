@@ -1,0 +1,62 @@
+{
+  "name": "lh_vue3-ts",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview",
+    "lint": "eslint src --fix --ext .ts,.tsx,.vue,.js,.jsx",
+    "prettier": "prettier --write .",
+    "prepare": "husky install",
+    "test": "npm run lint -- --fix",
+    "build:dev": "vite build --mode development",
+    "build:pro": "vite build --mode production"
+  },
+  "dependencies": {
+    "@kangc/v-md-editor": "^2.3.15",
+    "axios": "^1.2.1",
+    "marked": "^4.2.4",
+    "naive-ui": "^2.34.2",
+    "nprogress": "^0.2.0",
+    "pinia": "^2.0.0-rc.10",
+    "three": "^0.147.0",
+    "vfonts": "^0.0.3",
+    "vue": "^3.2.45",
+    "vue-router": "4"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.17",
+    "@types/nprogress": "^0.2.0",
+    "@typescript-eslint/eslint-plugin": "^5.47.0",
+    "@typescript-eslint/parser": "^5.47.0",
+    "@vicons/ionicons5": "^0.12.0",
+    "@vitejs/plugin-vue": "^4.0.0",
+    "dart-sass": "^1.25.0",
+    "eslint": "^8.30.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-vue": "^9.8.0",
+    "husky": "^8.0.0",
+    "lint-staged": ">=10",
+    "mrm": "^4.1.13",
+    "prettier": "^2.8.1",
+    "sass": "^1.57.1",
+    "typescript": "^4.9.3",
+    "vite": "^4.0.0",
+    "vite-plugin-compression": "^0.5.1",
+    "vue-tsc": "^1.0.11"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,vue,ts,tsx}": [
+      "yarn lint",
+      "prettier --write",
+      "git add"
+    ]
+  }
+}
