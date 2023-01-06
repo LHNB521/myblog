@@ -1,0 +1,111 @@
+@import '../../../../assets/styles/base.scss';
+@import '../../../../assets/styles/styles.scss';
+
+.tagBase {
+  padding: 0 10px;
+  border-radius: 10px;
+  color: $textColor;
+  height: 30px;
+  font-size: 18px;
+  background-color: $themeColor1;
+  @extend .hover;
+}
+
+.card {
+  cursor: pointer; // 鼠标样式
+  background-color: $themeColor;
+
+  .title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    font-weight: 700;
+    color: $textColor;
+  }
+
+  .desImg {
+    .content {
+      margin: 0;
+      width: 100%;
+      text-indent: 2em;
+      color: $textColor;
+      font-size: 18px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+    }
+  }
+
+  .info {
+    position: relative;
+    height: 30px;
+
+    .tags {
+      position: absolute;
+      bottom: 0;
+      max-width: 800px;
+
+      .tag {
+        @extend .tagBase;
+        display: inline-block;
+        margin-right: 20px;
+        text-align: center;
+        line-height: 30px;
+      }
+
+      .tag:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.card:hover {
+  transform: scale(1.02);
+  cursor: pointer;
+}
+
+.imgPositionRight {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
+.imgPositionLeft {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
+.tagsPositionLeft {
+  left: 0;
+}
+
+.tagsPositionRight {
+  right: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    .title {
+      height: 50rem;
+      line-height: 24rem;
+      font-size: 20rem;
+    }
+
+    .content {
+      height: 72rem;
+      text-indent: 2em;
+      font-size: 16rem;
+    }
+
+    .info {
+      display: none;
+    }
+  }
+}

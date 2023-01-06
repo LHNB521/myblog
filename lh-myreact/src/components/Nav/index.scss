@@ -1,0 +1,81 @@
+@import '../../assets/styles/styles.scss';
+@import '../../assets/styles/base.scss';
+
+
+.baseBtn {
+    @extend .hover;
+}
+
+.hiddenNav {
+    box-shadow: none !important;
+    transform: translate(0, -$navHeight);
+}
+
+.Nav {
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    @extend .trans;
+
+    .Nav_block {
+        color: $navTextColor;
+        position: relative;
+        display: flex;
+        justify-content: space-evenly;
+        line-height: 8vh;
+        font-size: 24px;
+        z-index: 10;
+
+        .articlesBtn {
+            position: relative;
+
+            .articelsSecond {
+                position: absolute;
+                top: -25vh;
+                left: -25px;
+                display: flex;
+                flex-direction: column;
+                @extend .trans;
+
+                .articelsSecondItem {
+                    width: 100px;
+                    height: 40px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-bottom: 10px;
+                    border-radius: 10px;
+                    color: white;
+                    @extend .hover;
+                }
+            }
+        }
+
+        .articlesBtn:hover .articelsSecond {
+            top: 8vh;
+        }
+
+        .navLink {
+            color: $navTextColor;
+        }
+    }
+
+    .setD {
+        position: absolute;
+        right: 20px;
+        display: none;
+        font-size: 50px;
+        color: red;
+    }
+
+    // @media screen and (max-width: 768px) {
+    //     .Nav_block {
+    //         display: none;
+    //     }
+
+    //     .setD {
+    //         display: block;
+    //     }
+    // }
+}

@@ -1,0 +1,44 @@
+@import '../../assets/styles/base.scss';
+@import '../../assets/styles/styles.scss';
+
+
+$rightWidth: 112px;
+
+.listDisplayed {
+    display: flex;
+    background-color: $themeColor1;
+    border-radius: 20px;
+    margin-bottom: 16px;
+    padding: 0 20px;
+    overflow: hidden;
+    font-size: 22px;
+    height: 60px;
+    // user-select: none;
+    cursor: pointer;
+    @extend .hover;
+
+    .title {
+        width: calc(100% - #{$rightWidth});
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .listDisplayed {
+        border-radius: 10rem;
+        margin-bottom: 10rem;
+        padding: 0 10rem;
+        height: 40rem;
+
+        .title {
+            font-size: 17rem;
+            width: 100%;
+        }
+
+    }
+}

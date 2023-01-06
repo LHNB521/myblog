@@ -1,0 +1,7 @@
+
+.hover{
+    @extend .trans
+}
+.trans{
+    transition: all 0.3s !important;
+}

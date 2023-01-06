@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport" />
+    <title>长江小浩</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script crossorigin src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+</body>
+<script>
+    function inMobile() {
+        document.getElementsByTagName('html')[0].style.fontSize =
+            document.documentElement.clientWidth / 450 + 'px';
+    }
+    document.addEventListener('DOMContentLoaded', inMobile);
+    window.onresize = inMobile;
+</script>
+
+</html>
