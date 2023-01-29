@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 interface theDoc {
   body?: string; // 内容
   description?: string; // 描述
-  title?: string; // 标题
+  article_title?: string; // 标题
   created_at?: string; // 创建时间
   category?: string;
   url?: string;
@@ -33,19 +33,21 @@ const Left: React.FC = () => {
   };
   return (
     <section className={s.section}>
-      {data?.map(({ title, description, category }: theDoc, index: number) => (
-        <TitleCard
-          title={title}
-          loading={loading}
-          description={description}
-          category={category}
-          imgPosition={index % 2 === 0}
-          imgSrc={imgRandom()}
-          onClick={() =>
-            navigate(`/post?title=${encodeURIComponent(`${title}`)}`)
-          }
-        />
-      ))}
+      {data?.map(
+        ({ article_title, description, category }: theDoc, index: number) => (
+          <TitleCard
+            title={article_title}
+            loading={loading}
+            description={description}
+            category={category}
+            imgPosition={index % 2 === 0}
+            imgSrc={imgRandom()}
+            onClick={() =>
+              navigate(`/post?title=${encodeURIComponent(`${article_title}`)}`)
+            }
+          />
+        )
+      )}
     </section>
   );
 };
